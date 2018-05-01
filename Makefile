@@ -15,10 +15,10 @@ OBJ = $(SRC:.cpp=.o)
 .cpp.o:
 	$(CC) -c $(CFLAGS) $<
 	
-test_program: $(OBJ)
+$(OUT): $(OBJ)
 	$(CC) $^ -o $@
 	
-all: test_program
+all: $(OUT)
 
 clean:
 	rm $(OBJ) $(OUT)
